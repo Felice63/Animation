@@ -1,0 +1,102 @@
+/* Basic resets */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100vh;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 130%;
+    line-height: 150%;
+    background-color: rgba(135, 207, 235, 0.229);
+}
+
+.ground {
+    width: 100vw;
+    height: 400px;
+    background-color: teal;
+    background-image: linear-gradient(rgb(24, 116, 116), rgb(42, 155, 155));
+    position: absolute;
+    bottom: 0;
+    z-index: -2;
+}
+
+.ball {
+    width: 200px;
+    height: 200px;
+    background-color: crimson;
+    background-image: radial-gradient(rgb(232, 103, 103),crimson, rgb(145, 36, 58));
+    margin: auto;
+    border-radius:50%;
+    position: relative;
+    top:420px;
+
+    animation-name: bounce;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-timing-function: ease-in;
+}
+
+.shadow {
+    width:100px;
+    height: 20px;
+    margin: auto;
+    background-color: rgba(12, 12, 12, 0.3);
+    border-radius: 50%;
+    position: relative;
+    top:400px;
+    filter: blur(3px);
+    z-index: -1;
+
+    animation-name: castShadow;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-timing-function:ease-in;
+    
+}
+
+/* Keyframes start */
+
+@keyframes bounce {
+    0% {
+        transform: translateY(-410px);
+    }
+    90% {
+        transform: scale(1);
+    }
+
+    96% {
+    transform: scaleX(1.25);
+    }
+
+    100% {
+        transform: scaleY(.5);
+    }
+}
+
+@keyframes castShadow {
+    0% {
+        transform: scale(.5);
+        opacity: 10%;
+    }
+    93% {
+        transform: scaleY(.9);
+    }
+
+    95% {
+        transform: scaleY(.75);
+    }
+
+    100% {
+        transform: scaleX(1.25);
+    }
+}
+
+
